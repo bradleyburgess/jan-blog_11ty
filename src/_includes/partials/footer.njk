@@ -1,0 +1,11 @@
+{% set twitterSocial = siteSettings.socialLinks | find('name', 'twitter') %}
+
+<footer class="footer">
+    <p class="footer__copyright">Copyright © {{ year }} Jan Thorne.</p>
+    <div class="footer__twitter">
+        <a href="{{ twitterSocial.url }}" aria-labelledby="footer-twitter-label">
+            <span id="footer-twitter-label" class="sr-only">Jan on Twitter</span>
+            {% include "icons/icon-twitter.svg" %}
+        </a>
+    </div>
+</footer>

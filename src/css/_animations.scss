@@ -1,0 +1,17 @@
+@keyframes partiallyFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.75;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.01;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint-up(large) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo {
+    @include breakpoint-up(large) {
+      margin-bottom: 0.75rem;
+    }
+  }
+  &__logo-text {
+    padding-inline: 1rem;
+    font-size: $size-4;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+}

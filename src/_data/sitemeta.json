@@ -1,8 +1,8 @@
 {
-  "title": "Test Site",
-  "author": "Bradley Burgess",
-  "twitter": "@bburgess_keys",
-  "description": "A test site",
+  "title": "This Blog Is About You",
+  "author": "Jan Thorne",
+  "twitter": "@JMTapir",
+  "description": "New Year. New World. New Blog.",
   "url": "localhost",
-  "favicon": "./src/img/favicon.svg"
+  "favicon": "./src/img/favicon.ico"
 }

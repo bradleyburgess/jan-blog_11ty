@@ -1,0 +1,22 @@
+---
+layout: 'layouts/base.njk'
+permalink: /
+pageJs:
+  - home
+---
+{# To animate the fancy dot partial in the site title: #}
+{% set animateDot = true %}
+
+<div class="site-title">
+    <h1 class="site-title__text">
+        {{ siteSettings.siteTitle }}{% include "partials/fancy-dot.njk" %}
+    </h1>
+</div>
+
+<div class="tagline animate-me">
+    <h2 class="tagline__text">
+        {% for item in siteSettings.tagLine %}
+            <span class="tagline__sentence">{{ item }}</span>
+        {% endfor %}
+    </h2>
+</div>

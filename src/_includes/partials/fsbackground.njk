@@ -1,0 +1,7 @@
+{% if page.url === '/' %}
+    <div class="fsbackground animate-me" id="fsbackground">
+        {% image siteSettings.siteCoverImage.url,
+        "",
+        loading = "eager" %}
+    </div>
+{% endif %}

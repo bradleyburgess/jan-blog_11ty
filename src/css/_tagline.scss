@@ -1,0 +1,32 @@
+$fade-duration: 500ms;
+
+.tagline {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  &.faded-out {
+    opacity: 0.01;
+  }
+  &.animate {
+    opacity: 1;
+  }
+
+  &__sentence {
+    display: block;
+    margin-bottom: 0.25rem;
+    animation-duration: $fade-duration;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    .animate & {
+      opacity: 0.01;
+      animation-name: fadeIn;
+    }
+
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        margin-left: 1rem * ($i - 1);
+        animation-delay: $fade-duration * $i + 500ms;
+      }
+    }
+  }
+}

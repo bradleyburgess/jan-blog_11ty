@@ -1,0 +1,19 @@
+<header class="header">
+    <div class="header__logo" id="header-logo">
+        <a href="/">
+            <h1 class="header__logo-text">TBIAY{% include "partials/fancy-dot.njk" %}</h1>
+        </a>
+    </div>
+    <nav class="main-nav">
+        <h2 class="sr-only" id="main-nav-label">Main Navigation</h2>
+        <ul class="main-nav__list" aria-labelledby="main-nav-label">
+            {% for item in collections.page %}
+                <li class="main-nav__list-item">
+                    <a href="{{ item.url }}"
+                       class="main-nav__anchor"
+                       {% if page.url === item.url %}aria-current="page"{% endif %}>{{ item.data.title | capitalize }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

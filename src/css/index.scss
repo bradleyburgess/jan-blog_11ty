@@ -1,2 +1,11 @@
-@import 'reset';
-@import 'base';
+@use 'reset';
+@use 'globals';
+
+@use 'animations';
+@use 'fancy-dot';
+@use 'footer';
+@use 'fsbackground';
+@use 'header';
+@use 'main-nav';
+@use 'site-title';
+@use 'tagline';

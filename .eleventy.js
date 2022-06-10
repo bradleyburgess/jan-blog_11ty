@@ -14,6 +14,7 @@ const toAbsoluteUrlFilter = require('./11ty/filters/toAbsoluteUrl');
 const objectHasFilter = require('./11ty/filters/object-has');
 const makeArrayFilter = require('./11ty/filters/makeArray');
 const jsminFilter = require('./11ty/filters/jsmin');
+const findFilter = require('./11ty/filters/find');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
@@ -25,6 +26,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('makeArray', makeArrayFilter);
   eleventyConfig.addFilter('jsmin', jsminFilter);
   eleventyConfig.addFilter('markdown', markdownShortcode);
+  eleventyConfig.addFilter('find', findFilter);
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);

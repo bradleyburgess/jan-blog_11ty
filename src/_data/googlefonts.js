@@ -1,14 +1,7 @@
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
-const fonts = [
-  'Noto+Serif:ital,wght@0,400;0,700;1,400;1,700',
-  'Open+Sans:wght@300;400;500;600;700',
-];
-
 const fontString =
-  'https://fonts.googleapis.com/css2?' +
-  fonts.map((font) => 'family=' + font).join('&') +
-  '&display=swap';
+  'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Inconsolata:wght@300;400&family=Montserrat:wght@400;500;600;700&display=swap';
 
 module.exports = async () => {
   const url = fontString;

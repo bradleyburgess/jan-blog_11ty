@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+$anchor-padding: 0.5rem;
+$thickness: 2px;
+
+.main-nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    margin-inline: 1rem;
+    gap: 1rem;
+    height: 100%;
+    list-style-type: none;
+  }
+  &__list-item {
+    font-weight: 500;
+    text-transform: uppercase;
+    a {
+      padding: $anchor-padding;
+    }
+  }
+
+  &__anchor {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: $anchor-padding;
+      width: calc(100% - 2 * $anchor-padding);
+      height: $thickness;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 150ms ease-in-out;
+      background-color: black;
+      border-radius: $thickness / 2;
+    }
+    &[aria-current='page']::after {
+      background-color: green;
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &[aria-current='page']::after {
+      transform: scaleX(1);
+    }
+  }
+}

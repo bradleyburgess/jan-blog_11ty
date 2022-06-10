@@ -34,6 +34,7 @@
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "graphql-request": "^4.3.0",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
     "netlify-plugin-11ty": "^1.1.0",
@@ -53,15 +54,13 @@
     },
     "js": {
       "source": [
-        "./src/js/index.js"
+        "./src/js/index.js",
+        "./src/js/home.js"
       ],
       "distDir": "./dist/js"
-    },
-    "criticalcss": {
-      "source": [
-        "./src/css/critical/index.scss"
-      ],
-      "distDir": "./src/_includes/critical-css"
     }
+  },
+  "dependencies": {
+    "graphql": "^16.5.0"
   }
 }

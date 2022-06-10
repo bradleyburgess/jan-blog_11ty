@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+
+  &__copyright {
+    font-size: $size-normal;
+    text-align: center;
+  }
+
+  &__twitter {
+    position: relative;
+    top: 3px;
+    overflow: hidden;
+    a {
+      padding: 0.35rem;
+      &:hover svg {
+        fill: green;
+      }
+    }
+    svg {
+      width: 1rem;
+      fill: black;
+      transition: fill 150ms ease-in-out;
+    }
+  }
+}

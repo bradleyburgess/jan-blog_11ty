@@ -1,0 +1,61 @@
+@use 'variables' as *;
+
+// LAYOUT
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  padding-top: 2rem;
+}
+
+// TYPOGRAPHY
+body {
+  font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+pre,
+code {
+  font-family: $font-mono;
+}
+
+// SCREEN READERS
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+}

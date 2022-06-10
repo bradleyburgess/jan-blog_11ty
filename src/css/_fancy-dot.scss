@@ -1,0 +1,67 @@
+.fancy-dot {
+  display: inline-block;
+  color: green;
+  font-size: 1.5em;
+  font-weight: bold;
+
+  &.animate {
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+    animation-name: dotAnimationDelay;
+  }
+
+  .hover-animation & {
+    animation-name: dotAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes dotAnimationDelay {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  15% {
+    transform: scale3d(1.5, 0.75, 1);
+  }
+  20% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  25% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  32% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  37% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  50%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes dotAnimation {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.5, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
