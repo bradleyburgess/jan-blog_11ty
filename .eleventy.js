@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedNunjucksShortcode('markdown', markdownShortcode);
 
   // plugins
-  eleventyConfig.addPlugin(brokenLinks);
+  process.NODE_ENV === 'production' && eleventyConfig.addPlugin(brokenLinks);
   eleventyConfig.addPlugin(faviconPlugin, {
     outputDir: dir.output,
     generateManifest: false,
