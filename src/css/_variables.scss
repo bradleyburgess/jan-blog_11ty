@@ -10,7 +10,9 @@ $gray3: #828282;
 $gray4: #bdbdbd;
 $gray5: #e0e0e0;
 $gray6: #f2f2f2;
-$white: var(--gray6);
+$white: #fff;
+$green-light: #98d998;
+$green-dark: #008000;
 
 // brand colors
 $instagram: #833ab4;
@@ -31,3 +33,4 @@ $size-small: 0.8333rem;
 small {
   font-size: $size-small;
 }
+$size-tiny: 0.75rem;

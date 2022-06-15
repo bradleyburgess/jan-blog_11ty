@@ -1,0 +1,25 @@
+---
+layout: 'layouts/base.njk'
+pagination:
+  data: posts.byTag
+  alias: tagGroup
+  size: 1
+permalink: "/tags/{{ tagGroup.tagName }}/{% if tagGroup.pageIndex > 0 %}{{ tagGroup.pageIndex + 1 }}/{% endif %}"
+eleventyComputed:
+  pageNavigation:
+    previous: "{{ tagGroup.previous }}"
+    next: "{{ tagGroup.next }}"
+    href:
+      previous: "/tags/{{ tagGroup.tagName }}/{% if (tagGroup.pageIndex > 0) and (tagGroup.pageIndex > 1) %}{{ tagGroup.pageIndex }}/{% endif %}"
+      next: "/tags/{{ tagGroup.tagName }}/{% if (tagGroup.pageIndex === 0) and (tagGroup.pageIndex < tagGroup.pagesLength) %}{{ tagGroup.pageIndex + 2}}/{% endif %}"
+---
+{% set postsList = tagGroup.posts %}
+
+<div class="posts__heading">
+  <h1>All #{{ tagGroup.tagName }} posts</h1>
+  <a href="/tags" class="posts__tags-link">Tags</a>
+</div>
+
+{% include 'partials/postsList.njk' %}
+
+{% include 'partials/page-navigation.njk' %}

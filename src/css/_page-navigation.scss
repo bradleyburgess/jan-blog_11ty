@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+.page-navigation {
+  $symbol-margin: 0.35em;
+  $section-margin: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: $section-margin;
+
+  a {
+    color: inherit;
+    font-family: $font-body;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__prev,
+  &__next {
+    font-weight: 600;
+    transition: color 150ms ease-in-out;
+    &:hover {
+      color: $green-dark;
+    }
+  }
+
+  &__prev {
+    &::before {
+      content: '\003C';
+      padding-right: $symbol-margin;
+    }
+  }
+
+  &__next {
+    &::after {
+      content: '\003E';
+      padding-left: $symbol-margin;
+    }
+  }
+}

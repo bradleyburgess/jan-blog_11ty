@@ -1,0 +1,12 @@
+---
+layout: 'layouts/page.njk'
+pagination:
+  data: sitePages
+  alias: sitePage
+  size: 1
+permalink: "/{{ sitePage.slug | slug }}/"
+eleventyComputed:
+  title: "{{ sitePage.title }}"
+---
+
+{{ sitePage.content | markdown | safe }}

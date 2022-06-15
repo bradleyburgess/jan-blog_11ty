@@ -15,6 +15,7 @@ const objectHasFilter = require('./11ty/filters/object-has');
 const makeArrayFilter = require('./11ty/filters/makeArray');
 const jsminFilter = require('./11ty/filters/jsmin');
 const findFilter = require('./11ty/filters/find');
+const toPostDateFilter = require('./11ty/filters/toPostDate');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
@@ -27,6 +28,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('jsmin', jsminFilter);
   eleventyConfig.addFilter('markdown', markdownShortcode);
   eleventyConfig.addFilter('find', findFilter);
+  eleventyConfig.addFilter('toPostDate', toPostDateFilter);
+  eleventyConfig.addFilter('filterByTag', (posts, tag) =>
+    posts.filter((post) => post.tags.includes(tag))
+  );
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);

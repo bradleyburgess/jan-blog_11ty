@@ -1,0 +1,14 @@
+---
+layout: 'layouts/base.njk'
+permalink: /tags/
+---
+
+<h1>All Tags</h1>
+
+<ul class="tags__list--big">
+    {% for tag in tags %}
+        <li class="tags__list-item">
+            <a href="/tags/{{ tag }}">#{{ tag }}</a>
+        </li>
+    {% endfor %}
+</ul>

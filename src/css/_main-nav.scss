@@ -34,7 +34,7 @@ $thickness: 2px;
       transform-origin: left;
       transition: transform 150ms ease-in-out;
       background-color: black;
-      border-radius: $thickness / 2;
+      border-radius: $thickness * 0.5;
     }
     &[aria-current='page']::after {
       background-color: green;

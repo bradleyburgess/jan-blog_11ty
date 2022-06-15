@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 // LAYOUT
 body {
@@ -8,6 +9,14 @@ body {
 main {
   flex: 1;
   padding-top: 2rem;
+  max-width: 40rem;
+  width: 100%;
+  margin: 0 auto;
+  @include breakpoint-down(small) {
+    & > :not(picture) {
+      padding-inline: 0.5rem;
+    }
+  }
 }
 
 // TYPOGRAPHY
@@ -24,13 +33,37 @@ h6 {
   font-family: $font-heading;
 }
 
+h1 {
+  font-size: $size-2;
+}
+h2 {
+  font-size: $size-3;
+}
+
+h3 {
+  font-size: $size-4;
+}
+
 p + p {
   margin-top: 1em;
+}
+h1,
+h2,
+h3 {
+  margin-bottom: 1em;
+}
+p {
+  line-height: 1.6;
 }
 
 pre,
 code {
   font-family: $font-mono;
+}
+
+// IMAGES
+img {
+  margin-block: 3rem;
 }
 
 // SCREEN READERS

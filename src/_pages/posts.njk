@@ -1,0 +1,28 @@
+---
+layout: 'layouts/base.njk'
+pagination:
+  data: posts.all
+  size: 3
+  alias: postsList
+permalink: "/posts/{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1}}/{% endif %}"
+tags: page
+title: Blog
+eleventyComputed:
+  pageNavigation:
+    previous: "{% if pagination.previous %}true{% else %}false{% endif %}"
+    next: "{% if pagination.next %}true{% else %}false{% endif %}"
+    href:
+      previous: "{{ pagination.href.previous }}"
+      next: "{{ pagination.href.next }}"
+---
+{% set nextText = 'Older Posts' %}
+{% set prevText = 'Newer Posts' %}
+
+<div class="posts__heading">
+  <h1>All Posts</h1>
+  <a href="/tags" class="posts__tags-link">Tags</a>
+</div>
+
+{% include 'partials/postsList.njk' %}
+
+{% include 'partials/page-navigation.njk' %}

@@ -1,0 +1,19 @@
+{% if not nextText %}{% set nextText = "Next Page" %}
+{% endif %}
+{% if not prevText %}{% set prevText = "Previous Page" %}
+{% endif %}
+
+{% if pageNavigation.previous === 'true' or pageNavigation.next === 'true'%}
+    <div class="page-navigation">
+        <div>
+            {% if pageNavigation.previous === 'true' %}
+                <a href="{{ pageNavigation.href.previous }}" class="page-navigation__prev">{{ prevText }}</a>
+            {% endif %}
+        </div>
+        <div>
+            {% if pageNavigation.next === 'true' %}
+                <a href="{{ pageNavigation.href.next }}" class="page-navigation__next">{{ nextText }}</a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

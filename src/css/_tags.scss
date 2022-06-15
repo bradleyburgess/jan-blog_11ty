@@ -1,0 +1,39 @@
+@use 'variables' as *;
+
+.tags {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style-type: none;
+    margin-block: 1rem;
+  }
+  &__list--big {
+    @extend .tags__list;
+    font-size: $size-normal;
+  }
+
+  &__list-item {
+    $height: 1.675rem;
+    font-family: $font-mono;
+    font-size: 0.75em;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $height;
+      padding-inline: 0.75em;
+      background-color: $green-light;
+      border-radius: $height * 0.5;
+      text-decoration: none;
+      color: inherit;
+      transition: color 150ms ease-in-out, background 150ms ease-in-out;
+
+      &:hover {
+        background-color: $green-dark;
+        color: $white;
+      }
+    }
+  }
+}
