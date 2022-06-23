@@ -11,12 +11,13 @@ const defaults = {
   widths: [600, 900, 1200, 1800, 2400, 4200, null],
 };
 
-module.exports = async function (src, alt, _options) {
-  const options = { ...defaults, ...(_options ?? {}) };
+module.exports = async function (src, alt, options) {
+  options = { ...defaults, ...(options ?? {}) };
   const { widths, formats, loading, sizes } = options;
+  const outputPath = this.outputPath ?? this.page?.outputPath ?? options.outputPath ?? null;
 
   if (alt === undefined) {
-    console.error(`\x1b[31mMissing alt for ${src} in ${this.page.inputPath}`);
+    console.error(`\x1b[31mMissing alt for ${src}${outputPath && ` in ${outputPath}`}`);
     process.exit(1);
   }
 
@@ -28,7 +29,7 @@ module.exports = async function (src, alt, _options) {
     : path.join(dir.input, 'img', path.parse(src).dir, path.parse(src).base);
   const outputDir = path.join(dir.output, 'img');
 
-  console.log(`Transforming image: ${src} in${this.page.inputPath}`);
+  console.log(`Transforming image: ${src}${outputPath && ` in ${outputPath}`}`);
 
   const metadata = await Image(fullyQualifiedSrc, {
     widths,
@@ -43,6 +44,7 @@ module.exports = async function (src, alt, _options) {
     loading,
     decoding: 'async',
   };
+  if (options.title) imageAttributes.title = options.title;
 
   return Image.generateHTML(metadata, imageAttributes);
 };

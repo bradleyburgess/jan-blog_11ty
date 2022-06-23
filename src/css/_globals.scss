@@ -1,6 +1,14 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// scrollbar trick
+@include breakpoint-up(large) {
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
 // LAYOUT
 body {
   display: flex;
@@ -13,7 +21,7 @@ main {
   width: 100%;
   margin: 0 auto;
   @include breakpoint-down(small) {
-    & > :not(picture) {
+    & > :not(picture, figure, img) {
       padding-inline: 0.5rem;
     }
   }
@@ -59,11 +67,6 @@ p {
 pre,
 code {
   font-family: $font-mono;
-}
-
-// IMAGES
-img {
-  margin-block: 3rem;
 }
 
 // SCREEN READERS

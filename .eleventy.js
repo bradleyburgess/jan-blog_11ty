@@ -16,6 +16,8 @@ const makeArrayFilter = require('./11ty/filters/makeArray');
 const jsminFilter = require('./11ty/filters/jsmin');
 const findFilter = require('./11ty/filters/find');
 const toPostDateFilter = require('./11ty/filters/toPostDate');
+const imgFigcaptionsPlugin = require('@bradleyburgess/eleventy-plugin-img-figcaptions');
+const img2pictureTransform = require('./11ty/transforms/img2picture');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
@@ -46,9 +48,13 @@ module.exports = function (eleventyConfig) {
     generateManifest: false,
   });
 
+  // figures and responsive images
+  eleventyConfig.addPlugin(imgFigcaptionsPlugin, { imgFigcaptionsOptions: { removeTitle: true } });
+  eleventyConfig.addTransform('img2picture', img2pictureTransform);
+
   // transforms, for prettifying and minifying
-  eleventyConfig.addTransform('prettier', prettierTransform);
-  eleventyConfig.addTransform('htmlmin', htmlminTransform);
+  process.NODE_ENV === 'development' && eleventyConfig.addTransform('prettier', prettierTransform);
+  process.NODE_ENV === 'production' && eleventyConfig.addTransform('htmlmin', htmlminTransform);
 
   return {
     dir,

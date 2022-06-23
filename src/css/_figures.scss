@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+img,
+picture {
+  :not(figure) > & {
+    margin-block: 3rem;
+  }
+}
+
+figure {
+  margin-block: 3rem;
+  overflow: hidden;
+  @include breakpoint-up(medium) {
+    border-radius: 0.625rem;
+    // from tailwind box-shadow lg:
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+}
+
+figcaption {
+  padding: 0.75rem 0.5rem;
+  font-family: $font-body;
+  font-size: $size-small;
+  font-style: italic;
+  text-align: center;
+  color: $gray1;
+  background-color: $gray5;
+
+  @include breakpoint-up(medium) {
+    padding: 0.75rem;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 1rem;
+  }
+}
