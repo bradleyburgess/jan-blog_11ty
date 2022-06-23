@@ -12,29 +12,29 @@
   |
  */
 
-const fs = require('fs');
-const dir = require('./11ty/constants/dir');
-const path = require('path');
+const fs = require("fs");
+const dir = require("./11ty/constants/dir");
+const path = require("path");
 
 // create temporary 404 page if it doesn't exist yet
-if (!fs.existsSync(path.join(__dirname, dir.output, '404.html'))) {
+if (!fs.existsSync(path.join(__dirname, dir.output, "404.html"))) {
   if (!fs.existsSync(path.join(__dirname, dir.output))) {
     fs.mkdirSync(path.join(__dirname, dir.output));
   }
-  fs.writeFileSync(path.join(__dirname, dir.output, '404.html'), '404 not found');
+  fs.writeFileSync(path.join(__dirname, dir.output, "404.html"), "404 not found");
 }
 
-const notFoundPage = fs.readFileSync(path.join(__dirname, 'dist', '404.html'));
+const notFoundPage = fs.readFileSync(path.join(__dirname, "dist", "404.html"));
 
 module.exports = {
-  files: ['dist/*'],
+  files: ["dist/*"],
   injectChanges: true,
   open: false,
-  server: 'dist',
+  server: "dist",
   throttle: 3000,
   callbacks: {
     ready: function (err, bs) {
-      bs.addMiddleware('*', (req, res) => {
+      bs.addMiddleware("*", (req, res) => {
         res.writeHead(404);
         res.write(notFoundPage);
         res.end();

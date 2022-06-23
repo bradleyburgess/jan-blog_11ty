@@ -1,3 +1,3 @@
-const normalizeDescription = (value) => value.replace(/\n/g, ' ').trim();
+const normalizeDescription = (value) => value.replace(/\n/g, " ").trim();
 
 module.exports = normalizeDescription;

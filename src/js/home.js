@@ -1,6 +1,6 @@
-import animateOnImgLoad from './lib/animateOnImgLoad';
+import animateOnImgLoad from "./lib/animateOnImgLoad";
 
 (() => {
-  document.querySelector('.tagline').classList.add('.faded-out')
+  document.querySelector(".tagline").classList.add(".faded-out");
   animateOnImgLoad();
 })();

@@ -1,13 +1,13 @@
-const path = require('path');
-const Image = require('@11ty/eleventy-img');
-const dir = require('../constants/dir');
-const sanitizeAltText = require('../helpers/sanitizeHtmlAttr');
-const checkRemoteSrc = require('../helpers/checkRemoteSrc');
+const path = require("path");
+const Image = require("@11ty/eleventy-img");
+const dir = require("../constants/dir");
+const sanitizeAltText = require("../helpers/sanitizeHtmlAttr");
+const checkRemoteSrc = require("../helpers/checkRemoteSrc");
 
 const defaults = {
-  formats: ['webp', 'avif', 'jpg'],
-  loading: 'lazy',
-  sizes: ['100vw'],
+  formats: ["webp", "avif", "jpg"],
+  loading: "lazy",
+  sizes: ["100vw"],
   widths: [600, 900, 1200, 1800, 2400, 4200, null],
 };
 
@@ -23,11 +23,11 @@ module.exports = async function (src, alt, options) {
 
   const isRemoteSrc = checkRemoteSrc(src);
 
-  const imgDir = '/img';
+  const imgDir = "/img";
   const fullyQualifiedSrc = isRemoteSrc
     ? src
-    : path.join(dir.input, 'img', path.parse(src).dir, path.parse(src).base);
-  const outputDir = path.join(dir.output, 'img');
+    : path.join(dir.input, "img", path.parse(src).dir, path.parse(src).base);
+  const outputDir = path.join(dir.output, "img");
 
   console.log(`Transforming image: ${src}${outputPath && ` in ${outputPath}`}`);
 
@@ -42,7 +42,7 @@ module.exports = async function (src, alt, options) {
     alt: sanitizeAltText(alt),
     sizes,
     loading,
-    decoding: 'async',
+    decoding: "async",
   };
   if (options.title) imageAttributes.title = options.title;
 

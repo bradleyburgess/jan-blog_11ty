@@ -1,16 +1,16 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: 'dist',
+      staticDistDir: "dist",
     },
     assert: {
-      preset: 'lighthouse:no-pwa',
+      preset: "lighthouse:no-pwa",
       assertions: {
-        'csp-xss': 'off',
+        "csp-xss": "off",
       },
     },
     upload: {
-      target: 'temporary-public-storage',
+      target: "temporary-public-storage",
     },
   },
 };

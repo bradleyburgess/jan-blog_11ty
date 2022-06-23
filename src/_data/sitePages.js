@@ -1,5 +1,5 @@
-const { gql } = require('graphql-request');
-const getRequest = require('../../11ty/helpers/getRequest');
+const { gql } = require("graphql-request");
+const getRequest = require("../../11ty/helpers/getRequest");
 
 const SITE_PAGES = gql`
   query SITE_PAGES {
@@ -12,6 +12,6 @@ const SITE_PAGES = gql`
 `;
 
 module.exports = async () => {
-  const { pages } = await getRequest(SITE_PAGES, 'site-pages');
+  const { pages } = await getRequest(SITE_PAGES, "site-pages");
   return pages;
 };

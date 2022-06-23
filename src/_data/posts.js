@@ -1,15 +1,15 @@
-const { gql } = require('graphql-request');
-const getRequest = require('../../11ty/helpers/getRequest');
-const _ = require('lodash');
+const { gql } = require("graphql-request");
+const getRequest = require("../../11ty/helpers/getRequest");
+const _ = require("lodash");
 
-const removeMd = require('remove-markdown');
+const removeMd = require("remove-markdown");
 const createExcerpt = (input) =>
   removeMd(input, {
     useImgAltText: false,
   })
-    .split(' ')
+    .split(" ")
     .slice(0, 40)
-    .join(' ') + ' …';
+    .join(" ") + " …";
 
 const ALL_POSTS = gql`
   query ALL_POSTS {
@@ -24,14 +24,14 @@ const ALL_POSTS = gql`
 `;
 
 module.exports = async () => {
-  const data = await getRequest(ALL_POSTS, 'all-posts');
+  const data = await getRequest(ALL_POSTS, "all-posts");
 
   const posts = {};
 
   posts.all = data.posts
     .map((post) => ({
       ...post,
-      tags: post.tags.split(', '),
+      tags: post.tags.split(", "),
       excerpt: createExcerpt(post.content),
     }))
     .sort((a, b) => {

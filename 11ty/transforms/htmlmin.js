@@ -1,5 +1,5 @@
-const debug = require('debug')('Eleventy-htmlmin');
-const { minify } = require('html-minifier');
+const debug = require("debug")("Eleventy-htmlmin");
+const { minify } = require("html-minifier");
 
 const htmlminOptions = {
   useShortDoctype: true,
@@ -9,10 +9,10 @@ const htmlminOptions = {
 };
 
 module.exports = function (content, outputPath) {
-  if (process.env.NODE_ENV !== 'production') return content;
-  if (!outputPath || !outputPath.endsWith('.html')) return content;
-  debug('minifying html for ', outputPath);
+  if (process.env.NODE_ENV !== "production") return content;
+  if (!outputPath || !outputPath.endsWith(".html")) return content;
+  debug("minifying html for ", outputPath);
   const minified = minify(content, htmlminOptions);
-  debug('finished minifying; returning');
+  debug("finished minifying; returning");
   return minified;
 };

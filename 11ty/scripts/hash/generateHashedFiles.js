@@ -1,5 +1,5 @@
-const pkg = require('../../../package.json');
-const path = require('path');
+const pkg = require("../../../package.json");
+const path = require("path");
 
 module.exports = function () {
   const cssSource = pkg.targets.css.source;
@@ -12,8 +12,8 @@ module.exports = function () {
   jsTargets = jsTargets.map((target) => path.parse(target).name);
 
   const hashedFiles = {
-    css: Object.assign({}, ...cssTargets.map((src) => ({ [src]: '' }))),
-    js: Object.assign({}, ...jsTargets.map((src) => ({ [src]: '' }))),
+    css: Object.assign({}, ...cssTargets.map((src) => ({ [src]: "" }))),
+    js: Object.assign({}, ...jsTargets.map((src) => ({ [src]: "" }))),
   };
 
   return hashedFiles;

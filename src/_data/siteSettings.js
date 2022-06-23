@@ -1,6 +1,6 @@
-const { gql } = require('graphql-request');
-const getRequest = require('../../11ty/helpers/getRequest');
-const splitSentences = require('../../11ty/helpers/splitSentences');
+const { gql } = require("graphql-request");
+const getRequest = require("../../11ty/helpers/getRequest");
+const splitSentences = require("../../11ty/helpers/splitSentences");
 
 const SITE_SETTINGS_QUERY = gql`
   query SITE_SETTINGS {
@@ -22,7 +22,7 @@ const SITE_SETTINGS_QUERY = gql`
 `;
 
 module.exports = async () => {
-  const data = await getRequest(SITE_SETTINGS_QUERY, 'site-settings');
+  const data = await getRequest(SITE_SETTINGS_QUERY, "site-settings");
   const settings = data.settings[0];
   return {
     ...settings,

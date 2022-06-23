@@ -4,14 +4,14 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ['prettier'],
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  plugins: ["prettier"],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
   rules: {
-    'prettier/prettier': ['error'],
-    'no-unused-vars': 'warn',
+    "prettier/prettier": ["error"],
+    "no-unused-vars": "warn",
   },
   parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 'latest',
+    sourceType: "module",
+    ecmaVersion: "latest",
   },
 };
