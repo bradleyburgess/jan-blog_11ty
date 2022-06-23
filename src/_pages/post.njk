@@ -1,10 +1,14 @@
 ---
 layout: 'layouts/base.njk'
+pageType: 'post'
 pagination:
   data: posts.all
   size: 1
   alias: post
 permalink: "/posts/{{ post.slug | slug }}/"
+eleventyComputed:
+  description: "{{ post.excerpt }}"
+  title: "{{ post.title }}"
 ---
 
 <h1 class="posts__title">{{ post.title }}</h1>
@@ -17,6 +21,6 @@ permalink: "/posts/{{ post.slug | slug }}/"
     {% endfor %}
 </ul>
 
-<hr />
+<hr/>
 
 {{ post.content | markdown | safe }}

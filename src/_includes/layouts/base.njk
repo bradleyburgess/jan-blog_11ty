@@ -1,5 +1,7 @@
 {% if not description %}
-  {% set description = sitemeta.description | sanitizeHtmlAttr %}
+  {% set description = sitemeta.description | normalizeDescription | sanitizeHtmlAttr %}
+{% else %}
+  {% set description = description | normalizeDescription %}
 {% endif %}
 {% if sitePage %}
   {% set title = sitePage.title %}
@@ -10,6 +12,7 @@
 {% else %}
   {% set docTitle = [title, sitemeta.title] | join(" | ") %}
 {% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,13 +22,15 @@
     <meta name="description" content="{{ description }}"/>
     {% ogmeta docTitle,
     page.url | toAbsoluteUrl,
-    description %}
+    description | normalizeDescription %}
     {% if ogImage %}{% ogimage ogImage.src,
       ogImage.alt %}
     {% elif sitemeta.ogImage %}{% ogimage sitemeta.ogImage.src,
       sitemeta.ogImage.alt %}
     {% endif %}
     <title>{{ docTitle }}</title>
+    {# Twitter me #}
+    <link rel="me" href="https://twitter.com/jmtapir"/>
 
     {# google fonts #}
     {% if googlefonts %}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>{% endif %}
@@ -74,6 +79,19 @@
     {% include "partials/header.njk" %}
     <main id="main-content" {% if templateClass %}class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
+      <hr />
+      <nav class="share-buttons">
+        <div class="share-buttons__text">Like it? Why not show some love and share it:</div>
+        <ul class="share-buttons__list">
+          {% for icon in shareIcons %}
+            <li class="share-buttons__list-item">
+              <a href="{{ icon.url }}" class="share-button {{ icon.name }}" aria-labelledby="share-label-{{ icon.name }}">
+                <span id="share-label-{{ icone.name }}" class="sr-only">Share via {{ icon.name | capitalize }}</span>
+                {% include "icons/icon-" + icon.name + ".svg" %}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
     </main>
     {% include "partials/footer.njk" %}
     {% include "partials/fsbackground.njk" %}

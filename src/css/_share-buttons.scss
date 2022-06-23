@@ -1,0 +1,70 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// brand colors
+$icons: (
+  'twitter': '#00A3F1',
+  'facebook': '#4267b2',
+  'whatsapp': '#2bb741',
+  'reddit': '#FF0000',
+  'pocket': '#FF0040',
+  'email': '#7F7F7F',
+);
+
+.share-buttons {
+  width: 100%;
+  margin-bottom: 3rem;
+  @include breakpoint-up(medium) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    row-gap: 1rem;
+  }
+
+  &__text {
+    position: relative;
+    bottom: 0.125rem;
+    font-style: italic;
+    text-align: center;
+    @include breakpoint-down(small) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+.share-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.75rem;
+  width: 1.75rem;
+  padding: 0.35rem;
+  border-radius: 50%;
+  transition: all 150ms ease-in-out;
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  svg {
+    fill: #fff;
+    height: 100%;
+    width: 100%;
+  }
+  @each $name, $color in $icons {
+    &.#{$name} {
+      background-color: #{$color};
+    }
+  }
+}

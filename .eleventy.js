@@ -18,6 +18,7 @@ const findFilter = require('./11ty/filters/find');
 const toPostDateFilter = require('./11ty/filters/toPostDate');
 const imgFigcaptionsPlugin = require('@bradleyburgess/eleventy-plugin-img-figcaptions');
 const img2pictureTransform = require('./11ty/transforms/img2picture');
+const normalizeDescriptionFilter = require('./11ty/filters/normalizeDescription');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
@@ -34,6 +35,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('filterByTag', (posts, tag) =>
     posts.filter((post) => post.tags.includes(tag))
   );
+  eleventyConfig.addFilter('normalizeDescription', normalizeDescriptionFilter);
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);

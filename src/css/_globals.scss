@@ -20,10 +20,8 @@ main {
   max-width: 40rem;
   width: 100%;
   margin: 0 auto;
-  @include breakpoint-down(small) {
-    & > :not(picture, figure, img) {
-      padding-inline: 0.5rem;
-    }
+  & > :not(picture, figure, img) {
+    padding-inline: 0.5rem;
   }
 }
 
