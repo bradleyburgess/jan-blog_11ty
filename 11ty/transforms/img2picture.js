@@ -9,11 +9,12 @@ async function img2picture(content) {
   const promises = [];
 
   for (let i = 0; i < images.length; i++) {
+    const index = i;
     const img = images[i];
     const src = $(img).attr('src');
     const alt = $(img).attr('alt') ?? '';
     const title = $(img).attr('title');
-    promises[i] = generatePicture({ src, alt, title, i, outputPath: this.outputPath });
+    promises[i] = generatePicture({ src, alt, title, index, outputPath: this.outputPath });
   }
 
   const pictures = await Promise.all(promises);
