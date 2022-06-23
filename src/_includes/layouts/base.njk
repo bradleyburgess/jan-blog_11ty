@@ -79,19 +79,21 @@
     {% include "partials/header.njk" %}
     <main id="main-content" {% if templateClass %}class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
-      <hr />
-      <nav class="share-buttons">
-        <div class="share-buttons__text">Like it? Why not show some love and share it:</div>
-        <ul class="share-buttons__list">
-          {% for icon in shareIcons %}
-            <li class="share-buttons__list-item">
-              <a href="{{ icon.url }}" class="share-button {{ icon.name }}" aria-labelledby="share-label-{{ icon.name }}">
-                <span id="share-label-{{ icone.name }}" class="sr-only">Share via {{ icon.name | capitalize }}</span>
-                {% include "icons/icon-" + icon.name + ".svg" %}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+      {% if tmplClass === 'post' %}
+        <hr/>
+        <nav class="share-buttons">
+          <div class="share-buttons__text">Like it? Why not show some love and share it:</div>
+          <ul class="share-buttons__list">
+            {% for icon in shareIcons %}
+              <li class="share-buttons__list-item">
+                <a href="{{ icon.url }}" class="share-button {{ icon.name }}" aria-labelledby="share-label-{{ icon.name }}">
+                  <span id="share-label-{{ icone.name }}" class="sr-only">Share via {{ icon.name | capitalize }}</span>
+                  {% include "icons/icon-" + icon.name + ".svg" %}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
     </main>
     {% include "partials/footer.njk" %}
     {% include "partials/fsbackground.njk" %}

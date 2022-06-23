@@ -2,7 +2,7 @@
 layout: 'layouts/base.njk'
 pagination:
   data: posts.all
-  size: 3
+  size: 5
   alias: postsList
 permalink: "/posts/{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1}}/{% endif %}"
 tags: page
