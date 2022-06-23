@@ -35,6 +35,7 @@ module.exports = async () => {
       excerpt: createExcerpt(post.content),
     }))
     .sort((a, b) => {
+      // reverse order
       const aDate = new Date(a.date);
       const bDate = new Date(b.date);
       return bDate - aDate;
