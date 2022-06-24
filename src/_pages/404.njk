@@ -4,6 +4,28 @@ permalink: 404.html
 layout: layouts/base.njk
 ---
 
-# Oops!
+{% set firstPost = posts.all | first %}
 
-It seems you are looking for a page that doesn't exist. Perhaps you should [go home](/) and try again?
+<h1>Oops!</h1>
+
+<figure>
+    <img src="https://media.graphassets.com/hHeI5DO0T2HoQOffpcVp" alt="Gina Linetta: How did my life come to this?"/>
+</figure>
+{# {% image "https://media.graphassets.com/hHeI5DO0T2HoQOffpcVp",
+"Gina Linetti: How did my life come to this?",
+loading = "eager",
+formats = ["gif"] %} #}
+
+<p>It seems you are looking for a page that doesn't exist. Perhaps you are looking for one of these pages?</p>
+
+<ul>
+    <li>
+        <a href="/about">About</a>
+    </li>
+    <li>
+        <a href="/posts">Blog</a>
+    </li>
+    <li>
+        <a href="/posts/{{ firstPost.slug }}">My Most Recent Post</a>
+    </li>
+</ul>

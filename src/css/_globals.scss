@@ -62,7 +62,7 @@ p {
   line-height: 1.6;
 }
 
-main :not(li) > a {
+main :not(li[class]) > a {
   color: black;
   font-weight: bold;
   transition: color 150ms ease-in-out;
@@ -74,6 +74,11 @@ main :not(li) > a {
 pre,
 code {
   font-family: $font-mono;
+}
+
+ul:not([class]) {
+  line-height: 1.35;
+  margin: 1rem 2rem;
 }
 
 // SCREEN READERS

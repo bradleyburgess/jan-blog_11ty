@@ -5,6 +5,7 @@ const Image = require("../shortcodes/image");
 async function img2picture(content) {
   const $ = cheerio.load(content);
   const images = $("img").not("picture img");
+  if (this.inputPath === "./src/_pages/404.njk") return content;
 
   const promises = [];
 
