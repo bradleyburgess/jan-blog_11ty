@@ -33,7 +33,7 @@ async function generatePicture({ src, alt, title, index, outputPath }) {
   let metadata = await Image(src, alt, {
     loading: index === 0 ? "eager" : "lazy",
     outputPath,
-    sizes: "(max-width: 40em) 50em, 100vw",
+    sizes: "(min-width: 700px) 700px, 100vw",
     title: title ?? null,
   });
   return metadata;

@@ -7,6 +7,7 @@ module.exports = {
       preset: "lighthouse:no-pwa",
       assertions: {
         "csp-xss": "off",
+        "tap-targets": "warn",
       },
     },
     upload: {
