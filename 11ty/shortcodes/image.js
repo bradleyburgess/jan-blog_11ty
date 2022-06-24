@@ -5,10 +5,10 @@ const sanitizeAltText = require("../helpers/sanitizeHtmlAttr");
 const checkRemoteSrc = require("../helpers/checkRemoteSrc");
 
 const defaults = {
-  formats: ["webp", "avif", "jpg"],
+  formats: ["webp", "jpg"],
   loading: "lazy",
   sizes: ["100vw"],
-  widths: [600, 900, 1200, 1800, 2400, 4200, null],
+  widths: [600, 900, 1200, 1800, 2400, 4200],
 };
 
 module.exports = async function (src, alt, options) {

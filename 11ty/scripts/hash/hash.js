@@ -10,15 +10,13 @@ const rename = promisify(fs.rename);
 
 const dir = require("../../constants/dir");
 
-const genFilePath = (filename) => {
-  const { base, ext } = path.parse(filename);
-  const type = ext.replace(/^\./, "");
-
-  if (!["css", "js"].includes(type))
-    throw new Error("Unknown file type in parcel targets! Check package.json");
-
-  return path.join(dir.output, type, base);
-};
+// const genFilePath = (filename) => {
+//   const { base, ext } = path.parse(filename);
+//   const type = ext.replace(/^\./, "");
+//   if (!["css", "js"].includes(type))
+//     throw new Error("Unknown file type in parcel targets! Check package.json");
+//   return path.join(dir.output, type, base);
+// };
 
 const hashedFiles = generateHashedFiles();
 
