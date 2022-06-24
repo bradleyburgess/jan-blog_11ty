@@ -12,6 +12,14 @@
 {% else %}
   {% set docTitle = [title, sitemeta.title] | join(" | ") %}
 {% endif %}
+{% set shareIcons = [
+  "twitter",
+  "facebook",
+  "whatsapp",
+  "reddit",
+  "pocket",
+  "email"
+] %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,14 +89,17 @@
       {{ content | safe }}
       {% if tmplClass === 'post' %}
         <hr/>
+        <div class="back-to-top">
+          <a href="#">Back To Top</a>
+        </div>
         <nav class="share-buttons">
           <div class="share-buttons__text">Like it? Why not show some love and share it:</div>
           <ul class="share-buttons__list">
-            {% for icon in shareIcons %}
+            {% for item in shareIcons %}
               <li class="share-buttons__list-item">
-                <a href="{{ icon.url }}" class="share-button {{ icon.name }}" aria-labelledby="share-label-{{ icon.name }}">
-                  <span id="share-label-{{ icone.name }}" class="sr-only">Share via {{ icon.name | capitalize }}</span>
-                  {% include "icons/icon-" + icon.name + ".svg" %}</a>
+                <a href="{% createShareLink item, page.url | toAbsoluteUrl, docTitle %}" class="share-button {{ item }}" aria-labelledby="share-label-{{ item }}">
+                  <span id="share-label-{{ item }}" class="sr-only">Share via {{ item | capitalize }}</span>
+                  {% include "icons/icon-" + item + ".svg" %}</a>
               </li>
             {% endfor %}
           </ul>

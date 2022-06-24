@@ -1,0 +1,15 @@
+@use "mixins" as *;
+
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  @include breakpoint-up(medium) {
+    justify-content: flex-end;
+  }
+  width: 100%;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  a {
+    display: block;
+  }
+}

@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // scrollbar trick
 @include breakpoint-up(large) {
@@ -60,6 +60,15 @@ h3 {
 }
 p {
   line-height: 1.6;
+}
+
+main :not(li) > a {
+  color: black;
+  font-weight: bold;
+  transition: color 150ms ease-in-out;
+  &:hover {
+    color: $green-dark;
+  }
 }
 
 pre,

@@ -1,14 +1,15 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // brand colors
 $icons: (
-  'twitter': '#00A3F1',
-  'facebook': '#4267b2',
-  'whatsapp': '#2bb741',
-  'reddit': '#FF0000',
-  'pocket': '#FF0040',
-  'email': '#7F7F7F',
+  "twitter": "#00A3F1",
+  "facebook": "#4267b2",
+  "messenger": "#2196F3",
+  "whatsapp": "#2bb741",
+  "reddit": "#FF0000",
+  "pocket": "#FF0040",
+  "email": "#7F7F7F",
 );
 
 .share-buttons {
