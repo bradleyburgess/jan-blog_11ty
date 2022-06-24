@@ -9,6 +9,7 @@ const htmlminOptions = {
 };
 
 module.exports = function (content, outputPath) {
+  outputPath = outputPath ?? this.outputPath;
   if (process.env.NODE_ENV !== "production") return content;
   if (!outputPath || !outputPath.endsWith(".html")) return content;
   debug("minifying html for ", outputPath);

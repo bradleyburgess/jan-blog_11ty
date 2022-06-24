@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 $anchor-padding: 0.5rem;
 $thickness: 2px;
@@ -12,6 +12,9 @@ $thickness: 2px;
     gap: 1rem;
     height: 100%;
     list-style-type: none;
+    @include breakpoint-down(small) {
+      margin-top: 0.25rem;
+    }
   }
   &__list-item {
     font-weight: 500;
@@ -24,7 +27,7 @@ $thickness: 2px;
   &__anchor {
     position: relative;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: $anchor-padding;
@@ -36,13 +39,13 @@ $thickness: 2px;
       background-color: black;
       border-radius: $thickness * 0.5;
     }
-    &[aria-current='page']::after {
+    &[aria-current="page"]::after {
       background-color: green;
     }
 
     &:hover::after,
     &:focus::after,
-    &[aria-current='page']::after {
+    &[aria-current="page"]::after {
       transform: scaleX(1);
     }
   }

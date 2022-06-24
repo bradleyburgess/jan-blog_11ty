@@ -269,17 +269,17 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bradleyburgess/eleventy-plugin-img-figcaptions@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bradleyburgess/eleventy-plugin-img-figcaptions/-/eleventy-plugin-img-figcaptions-1.0.0.tgz#71ae0241694ee4e60072561459008ce3837619d2"
-  integrity sha512-Sd9vfhOOlJEiay6V9F8JXignY2hesSnBCJn8C7xhiYGs/K5j0BdBIxU1rYACMpnYvNZpQ4axkyhlOw3r6EiOPQ==
+"@bradleyburgess/eleventy-plugin-img-figcaptions@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@bradleyburgess/eleventy-plugin-img-figcaptions/-/eleventy-plugin-img-figcaptions-1.0.2.tgz#ea3f4f2db9edf5634c660214bcb9e147f213bdad"
+  integrity sha512-k5Y38CTzh28VnqGYaGPi0YLMH1AzeOArhpUWBg/uYwuSKfjRZEa+18p3piCn4euOQoPRK6BShX7TGFcOzmyUjQ==
   dependencies:
-    "@bradleyburgess/img-figcaptions" "^1.0.0"
+    "@bradleyburgess/img-figcaptions" "^1.1.2"
 
-"@bradleyburgess/img-figcaptions@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bradleyburgess/img-figcaptions/-/img-figcaptions-1.0.0.tgz#2153011bf46dd592ddec49a6182e761312c171c9"
-  integrity sha512-WzX1AF3Bdl+1fmNWMgvqIDUWqJAeF2mzsk4MaFkkQXP75rsQyMTo52kl1vR6ZK0O4mthGE6kJopBesNsVDZblg==
+"@bradleyburgess/img-figcaptions@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@bradleyburgess/img-figcaptions/-/img-figcaptions-1.1.2.tgz#fd0c5f869b5ab255a68b416fcaa38ad97ff22172"
+  integrity sha512-Q2TmGvqmIf0ITeXckMf134DgsgX7h24q8tSkvGhNEq3SUVd/ageIFRx5l6K2XBGEelOMp3H5uyujDyREwPRcfQ==
   dependencies:
     cheerio "^1.0.0-rc.11"
 
@@ -1680,7 +1680,7 @@ bmp-js@^0.1.0:
 boolbase@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
-  integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+  integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -4024,9 +4024,9 @@ npmlog@^4.0.1:
     set-blocking "~2.0.0"
 
 nth-check@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-2.0.1.tgz#2efe162f5c3da06a28959fbd3db75dbeea9f0fc2"
-  integrity sha512-it1vE95zF6dTT9lBsYbxvqh0Soy4SPowchj0UBGj/V6cTPnXXtQOPUbhZ6CmGzAD/rW22LQK6E96pcdJXk4A4w==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-2.1.1.tgz#c9eab428effce36cd6b92c924bdb000ef1f1ed1d"
+  integrity sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==
   dependencies:
     boolbase "^1.0.0"
 

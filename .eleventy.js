@@ -16,13 +16,14 @@ const makeArrayFilter = require("./11ty/filters/makeArray");
 const jsminFilter = require("./11ty/filters/jsmin");
 const findFilter = require("./11ty/filters/find");
 const toPostDateFilter = require("./11ty/filters/toPostDate");
-const imgFigcaptionsPlugin = require("@bradleyburgess/eleventy-plugin-img-figcaptions");
+const imgFigcaptionsTransform = require("@bradleyburgess/img-figcaptions");
 const img2pictureTransform = require("./11ty/transforms/img2picture");
 const normalizeDescriptionFilter = require("./11ty/filters/normalizeDescription");
 const createShareLinkShortcode = require("./11ty/filters/createShareLink");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./11ty");
+  eleventyConfig.addPassthroughCopy("src/static");
 
   // filters
   eleventyConfig.addFilter("toAbsoluteUrl", toAbsoluteUrlFilter);
@@ -52,13 +53,22 @@ module.exports = function (eleventyConfig) {
     generateManifest: false,
   });
 
-  // figures and responsive images
-  eleventyConfig.addPlugin(imgFigcaptionsPlugin, { imgFigcaptionsOptions: { removeTitle: true } });
-  eleventyConfig.addTransform("img2picture", img2pictureTransform);
+  // transforms: images and captions
+  eleventyConfig.addTransform("pictures-captions", async function (content) {
+    if (this.inputPath !== "./src/_pages/index.njk")
+      content = imgFigcaptionsTransform(content, { removeTitle: true, addFigureToAllImgs: true });
+    content = await img2pictureTransform(content, {
+      inputPath: this.inputPath,
+      outputPath: this.outputPath,
+    });
+    return content;
+  });
 
-  // transforms, for prettifying and minifying
-  process.NODE_ENV === "development" && eleventyConfig.addTransform("prettier", prettierTransform);
-  process.NODE_ENV === "production" && eleventyConfig.addTransform("htmlmin", htmlminTransform);
+  // transforms: prettifying and minifying
+  if (process.env.NODE_ENV === "development")
+    eleventyConfig.addTransform("prettier", prettierTransform);
+  if (process.env.NODE_ENV === "production")
+    eleventyConfig.addTransform("htmlmin", htmlminTransform);
 
   return {
     dir,

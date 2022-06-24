@@ -1,12 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
-
-img,
-picture {
-  :not(figure) > & {
-    margin-block: 3rem;
-  }
-}
+@use "variables" as *;
+@use "mixins" as *;
 
 figure {
   margin-block: 3rem;

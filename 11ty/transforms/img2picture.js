@@ -2,10 +2,12 @@ const cheerio = require("cheerio");
 
 const Image = require("../shortcodes/image");
 
-async function img2picture(content) {
+async function img2picture(content, paths) {
+  const inputPath = paths.inputPath ?? this.inputPath;
+  const outputPath = paths.outputPath ?? this.outputPath;
   const $ = cheerio.load(content);
   const images = $("img").not("picture img");
-  if (this.inputPath === "./src/_pages/404.njk") return content;
+  if (inputPath === "./src/_pages/404.njk") return content;
 
   const promises = [];
 
@@ -15,7 +17,7 @@ async function img2picture(content) {
     const src = $(img).attr("src");
     const alt = $(img).attr("alt") ?? "";
     const title = $(img).attr("title");
-    promises[i] = generatePicture({ src, alt, title, index, outputPath: this.outputPath });
+    promises[i] = generatePicture({ src, alt, title, index, outputPath });
   }
 
   const pictures = await Promise.all(promises);
