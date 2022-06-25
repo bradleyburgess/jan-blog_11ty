@@ -48,6 +48,9 @@ $icons: (
 
 button.share-button {
   display: none;
+  @include breakpoint-down(small) {
+    margin: 0 auto;
+  }
   outline: 0;
   border: 0;
   cursor: pointer;

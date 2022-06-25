@@ -1,6 +1,7 @@
 @use "mixins" as *;
 
 .back-to-top {
+  padding-inline: 0.5rem;
   div {
     width: 6.25rem;
     text-align: center;

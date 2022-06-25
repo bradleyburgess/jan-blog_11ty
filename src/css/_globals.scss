@@ -20,7 +20,7 @@ main {
   max-width: 40rem;
   width: 100%;
   margin: 0 auto;
-  & > :not(picture, figure, img) {
+  & > article > :not(picture, figure, img, video) {
     padding-inline: 0.5rem;
   }
 }
