@@ -12,6 +12,7 @@ const generateTag = (prop, value) => {
     "twitter:creator": `name="twitter:creator" content="${value}"`,
     "twitter:description": `name="twitter:description" content="${value}"`,
     "twitter:card": `name="twitter:card" content="${value}"`,
+    author: `name="author" content="${value}"`,
   };
   return `<meta ${tags[prop]} />`;
 };
@@ -39,6 +40,7 @@ module.exports = function (title, url, description = sitemeta.description, type 
   });
 
   if (sitemeta.twitter) elems.push(generateTag("twitter:creator", sitemeta.twitter));
+  if (sitemeta.author) elems.push(generateTag("author", sitemeta.author));
 
   return elems.join("\n");
 };
