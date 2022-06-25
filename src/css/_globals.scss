@@ -62,7 +62,8 @@ p {
   line-height: 1.6;
 }
 
-main :not(li[class]) > a {
+main :not(li[class]) > a,
+a.sr-only {
   color: black;
   font-weight: bold;
   transition: color 150ms ease-in-out;

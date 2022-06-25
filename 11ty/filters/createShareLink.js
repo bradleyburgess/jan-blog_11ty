@@ -11,7 +11,7 @@ const socialMap = {
   facebook: (url, title) =>
     "https://www.facebook.com/sharer/sharer.php" + getParams({ u: url, quote: title }),
   whatsapp: (url, title) =>
-    "https://api.whatsapp.com/send" + getParams({ text: title + " | " + url }),
+    "https://web.whatsapp.com/send" + getParams({ text: title + " | " + url }),
   reddit: (url, title) => "https://www.reddit.com/submit" + getParams({ url, title }),
   pocket: (url, title) => "https://getpocket.com/save" + getParams({ url, title }),
   email: (url, title) => "mailto:" + getParams({ subject: title, body: url }),
