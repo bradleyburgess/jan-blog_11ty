@@ -1,14 +1,17 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 .header {
   display: flex;
   justify-content: space-between;
+  height: $header-mobile;
   @include breakpoint-up(large) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: $header-desktop;
   }
+  overflow-y: hidden;
   a {
     text-decoration: none;
     color: inherit;

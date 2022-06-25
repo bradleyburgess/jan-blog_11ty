@@ -11,9 +11,6 @@
 
 // LAYOUT
 main {
-  $header-mobile: 2.625rem;
-  $header-desktop: 4.5625rem;
-  $footer: 2.599375rem;
   min-height: calc(100% - ($header-mobile + $footer));
   @include breakpoint-up(large) {
     min-height: calc(100% - ($header-desktop + $footer));

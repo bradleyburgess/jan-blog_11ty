@@ -1,7 +1,7 @@
 // Fonts
-$font-body: 'Lato', serif;
-$font-heading: 'Montserrat', sans-serif;
-$font-mono: 'Inconsolata', monospace;
+$font-body: "Lato", serif;
+$font-heading: "Montserrat", sans-serif;
+$font-mono: "Inconsolata", monospace;
 
 // theme colors
 $gray1: #333333;
@@ -26,3 +26,7 @@ small {
   font-size: $size-small;
 }
 $size-tiny: 0.75rem;
+
+$header-mobile: 2.625rem;
+$header-desktop: 4.5625rem;
+$footer: 2.599375rem;
