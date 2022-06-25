@@ -10,12 +10,14 @@
 }
 
 // LAYOUT
-body {
-  display: flex;
-  flex-direction: column;
-}
 main {
-  flex: 1;
+  $header-mobile: 2.625rem;
+  $header-desktop: 4.5625rem;
+  $footer: 2.599375rem;
+  min-height: calc(100% - ($header-mobile + $footer));
+  @include breakpoint-up(large) {
+    min-height: calc(100% - ($header-desktop + $footer));
+  }
   padding-top: 2rem;
   max-width: 40rem;
   width: 100%;
