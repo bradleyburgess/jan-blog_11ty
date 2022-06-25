@@ -40,36 +40,18 @@
     {# Twitter me #}
     <link rel="me" href="https://twitter.com/jmtapir"/>
 
-    {# google fonts #}
-    {% if googlefonts %}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>{% endif %}
-
     {# inline css #}
-    {% if googlefonts or criticalCss %}
-      {% set css %}
-      {% if googlefonts %}{{ googlefonts | safe }}
-      {% endif %}
-      {% if criticalCss %}
-        {% for item in criticalCss | makeArray %}
-          {% include "critical-css/" + item + ".css" %}
-        {% endfor %}
-      {% endif %}
-      {% endset %}
-      <style>
-        {{css | safe}}
-      </style>
-    {% endif %}
-
-    {# inline js #}
-    {% if criticalJs %}
-      {% set js %}
-      {% for item in criticalJs | makeArray %}
-        {% include "critical-js/" + item + ".js" %}
+    {% set css %}
+    {% include "partials/googlefonts.css" %}
+    {% if criticalCss %}
+      {% for item in criticalCss | makeArray %}
+        {% include "critical-css/" + item + ".css" %}
       {% endfor %}
-      {% endset %}
-      <script>
-        {{ js | jsmin }}
-      </script>
     {% endif %}
+    {% endset %}
+    <style>
+      {{css | safe}}
+    </style>
 
     {% if hash.css | has('index') %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen"/>{% endif %}
     {% if hash.js | has('index') %}

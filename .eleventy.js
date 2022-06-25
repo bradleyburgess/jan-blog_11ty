@@ -23,7 +23,8 @@ const createShareLinkShortcode = require("./11ty/filters/createShareLink");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./11ty");
-  eleventyConfig.addPassthroughCopy("src/static");
+  eleventyConfig.addPassthroughCopy({ "static/video": "video" });
+  eleventyConfig.addPassthroughCopy({ "static/fonts": "fonts" });
 
   // filters
   eleventyConfig.addFilter("toAbsoluteUrl", toAbsoluteUrlFilter);
