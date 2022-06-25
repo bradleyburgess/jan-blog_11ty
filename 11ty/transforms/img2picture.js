@@ -34,7 +34,7 @@ async function generatePicture({ src, alt, title, index, outputPath }) {
     loading: index === 0 ? "eager" : "lazy",
     outputPath,
     sizes: "(max-width: 40em): 100vw, 40em",
-    widths: [600, 900, 1200],
+    widths: [800, 950, 1100, 1250],
     title: title ?? null,
   });
   return metadata;
