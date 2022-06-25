@@ -10,6 +10,7 @@ $icons: (
   "reddit": "#FF0000",
   "pocket": "#FF0040",
   "email": "#7F7F7F",
+  "share": "#7F7F7F",
 );
 
 .share-buttons {
@@ -43,6 +44,13 @@ $icons: (
     padding: 0;
     list-style-type: none;
   }
+}
+
+button.share-button {
+  display: none;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
 }
 
 .share-button {

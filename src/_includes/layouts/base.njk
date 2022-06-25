@@ -86,15 +86,21 @@
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
     {% include "partials/header.njk" %}
     <main id="main-content" {% if templateClass %}class="{{ templateClass }}"{% endif %}>
-      {{ content | safe }}
+      <article>
+        {{ content | safe }}
+      </article>
       {% if tmplClass === 'post' %}
         <hr/>
         <div class="back-to-top">
           <a href="#">Back To Top</a>
         </div>
-        <nav class="share-buttons">
-          <div class="share-buttons__text">Like it? Why not show some love and share it:</div>
-          <ul class="share-buttons__list">
+        <aside class="share-buttons">
+          <p class="share-buttons__text">Like it? Why not show some love and share it:</p>
+          <button class="share-button share" id="share-buttons-button">
+            <span class="sr-only">Share this article</span>
+            {% include "icons/icon-share.svg" %}
+          </button>
+          <ul class="share-buttons__list" id="share-buttons-list">
             {% for item in shareIcons %}
               <li class="share-buttons__list-item">
                 <a href="{% createShareLink item, page.url | toAbsoluteUrl, docTitle %}" class="share-button {{ item }}" aria-labelledby="share-label-{{ item }}">
@@ -103,7 +109,7 @@
               </li>
             {% endfor %}
           </ul>
-        </nav>
+        </aside>
       {% endif %}
     </main>
     {% include "partials/footer.njk" %}

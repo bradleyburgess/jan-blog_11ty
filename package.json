@@ -60,7 +60,8 @@
     "js": {
       "source": [
         "./src/js/index.js",
-        "./src/js/home.js"
+        "./src/js/home.js",
+        "./src/js/post.js"
       ],
       "distDir": "./dist/js"
     }

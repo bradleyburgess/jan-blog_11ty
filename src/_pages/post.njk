@@ -9,9 +9,11 @@ permalink: "/posts/{{ post.slug | slug }}/"
 eleventyComputed:
   description: "{{ post.excerpt }}"
   title: "{{ post.title }}"
+pageJs:
+  - post
 ---
 
-<h1 class="posts__title">{{ post.title }}</h1>
+<h1 class="posts__title" id="post-title">{{ post.title }}</h1>
 <h2 class="posts__date">{{ post.date | toPostDate }}</h2>
 <ul class="tags__list">
   {% for tag in post.tags %}
