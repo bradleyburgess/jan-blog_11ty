@@ -91,9 +91,21 @@
       </article>
       {% if tmplClass === 'post' %}
         <hr/>
-        <div class="back-to-top">
-          <a href="#">Back To Top</a>
-        </div>
+        <nav class="back-to-top">
+          <div class="prev">
+            {% if pagination.previous %}
+              <a href="{{ pagination.href.previous }}">Previous post</a>
+            {% endif %}
+          </div>
+          <div>
+            <a href="#">Back To Top</a>
+          </div>
+          <div class="next">
+            {% if pagination.next %}
+              <a href="{{ pagination.href.next }}">Next post</a>
+            {% endif %}
+          </div>
+        </nav>
         <aside class="share-buttons">
           <p class="share-buttons__text">Like it? Why not show some love and share it:</p>
           <button class="share-button share" id="share-buttons-button">

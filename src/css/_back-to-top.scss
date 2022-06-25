@@ -1,11 +1,18 @@
 @use "mixins" as *;
 
 .back-to-top {
-  display: flex;
-  justify-content: center;
-  @include breakpoint-up(medium) {
-    justify-content: flex-end;
+  div {
+    width: 6.25rem;
+    text-align: center;
+    &.prev {
+      text-align: left;
+    }
+    &.next {
+      text-align: right;
+    }
   }
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   margin-top: -1rem;
   margin-bottom: 2rem;
