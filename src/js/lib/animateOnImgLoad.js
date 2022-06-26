@@ -8,10 +8,18 @@ const animateOnImgLoad = () => {
     });
   };
 
-  img.onload = () => {
+  function waitForVisibililty() {
     const { visibilityState } = document;
     if (visibilityState === "visible") return animate();
     document.addEventListener("visibilitychange", animate, { once: true });
+  }
+
+  // window load
+  // img load
+  // visible
+  window.onload = () => {
+    if (img.complete) return waitForVisibililty();
+    img.onload = () => waitForVisibililty();
   };
 };
 

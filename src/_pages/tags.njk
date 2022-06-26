@@ -3,7 +3,10 @@ layout: 'layouts/base.njk'
 permalink: /tags/
 ---
 
-<h1>All Tags</h1>
+<div class="posts__heading">
+    <h1>All Tags</h1>
+    <a href="/posts" class="posts__tags-link">Posts</a>
+</div>
 
 <ul class="tags__list--big">
     {% for tag in tags %}
