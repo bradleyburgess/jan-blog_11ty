@@ -11,13 +11,14 @@
     align-items: center;
     height: $header-desktop;
   }
-  overflow-y: hidden;
+  // overflow-y: hidden;
   a {
     text-decoration: none;
     color: inherit;
   }
 
   &__logo {
+    overflow: hidden;
     h1 {
       margin: 0;
     }
