@@ -30,13 +30,16 @@ async function img2picture(content, paths) {
 }
 
 async function generatePicture({ src, alt, title, index, outputPath }) {
-  let metadata = await Image(src, alt, {
+  const imageOptions = {
     loading: index === 0 ? "eager" : "lazy",
     outputPath,
     sizes: "(max-width: 40em) 100vw, 40em",
     widths: [800, 950, 1100, 1250],
-    title: title ?? null,
-  });
+  };
+  if (index === 0) imageOptions.fetchpriority = "high";
+  if (title) imageOptions.title = title;
+
+  const metadata = await Image(src, alt, imageOptions);
   return metadata;
 }
 

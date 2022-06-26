@@ -45,6 +45,7 @@ module.exports = async function (src, alt, options) {
     decoding: "async",
   };
   if (options.title) imageAttributes.title = options.title;
+  if (options.fetchpriority) imageAttributes.fetchpriority = options.fetchpriority;
 
   return Image.generateHTML(metadata, imageAttributes);
 };
