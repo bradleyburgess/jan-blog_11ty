@@ -64,6 +64,12 @@
     {% endif %}
     {% if sitemeta | has('favicon') %}{% favicons sitemeta.favicon %}
     {% endif %}
+    <script>
+      document
+        .documentElement
+        .classList
+        .add('enhanced')
+    </script>
   </head>
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
     <a href="#main-content" class="skip-link sr-only sr-only-focusable">Skip to main content</a>

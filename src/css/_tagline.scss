@@ -4,7 +4,7 @@ $fade-duration: 500ms;
   display: flex;
   justify-content: center;
   margin-top: 4rem;
-  &.faded-out {
+  .enhanced &:not(.animate) {
     opacity: 0.01;
   }
   &.animate {
