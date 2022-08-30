@@ -121,9 +121,9 @@
     {# Analytics #}
     {% if analytics.enabled and NODE_ENV === 'production' %}
       <noscript>
-        <img src="https://do-shynet.bombarde32.net/ingress/f41c9a9d-a58d-4cac-b73e-adcfe2c0a00e/pixel.gif" alt="">
+        <img src="{{ analytics.imgSrc }}" alt="">
       </noscript>
-      <script defer src="https://do-shynet.bombarde32.net/ingress/f41c9a9d-a58d-4cac-b73e-adcfe2c0a00e/script.js"></script>
+      <script defer src="{{ analytics.scriptSrc }}"></script>
     {% endif %}
   </body>
 </html>
