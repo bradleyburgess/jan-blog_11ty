@@ -23,7 +23,7 @@
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.1",
     "@bradleyburgess/eleventy-plugin-img-figcaptions": "^1.0.2",
     "@bradleyburgess/img-figcaptions": "^1.1.2",
     "@parcel/transformer-sass": "^2.7.0",
