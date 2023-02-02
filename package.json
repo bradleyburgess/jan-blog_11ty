@@ -26,7 +26,7 @@
     "@babel/core": "^7.20.12",
     "@bradleyburgess/eleventy-plugin-img-figcaptions": "^1.0.2",
     "@bradleyburgess/img-figcaptions": "^1.1.2",
-    "@parcel/transformer-sass": "^2.7.0",
+    "@parcel/transformer-sass": "^2.8.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "browser-sync": "^2.27.10",
     "cross-env": "^7.0.3",
