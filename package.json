@@ -67,6 +67,7 @@
     }
   },
   "dependencies": {
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "sharp": "^0.31.3"
   }
 }
