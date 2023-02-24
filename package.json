@@ -47,7 +47,7 @@
     "prettier": "^2.8.4",
     "remove-markdown": "^0.5.0",
     "rimraf": "^3.0.2",
-    "terser": "^5.16.4"
+    "terser": "^5.16.5"
   },
   "browserslist": "defaults",
   "targets": {
