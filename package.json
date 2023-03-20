@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.0.0",
     "@babel/core": "^7.21.3",
     "@bradleyburgess/eleventy-plugin-img-figcaptions": "^1.0.2",
