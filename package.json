@@ -34,7 +34,7 @@
     "eleventy-plugin-broken-links": "^2.0.3",
     "eleventy-plugin-gen-favicons": "^1.1.2",
     "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "graphql-request": "^5.2.0",
     "html-minifier": "^4.0.0",
