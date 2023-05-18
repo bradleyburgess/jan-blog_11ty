@@ -28,7 +28,7 @@
     "@bradleyburgess/img-figcaptions": "^1.1.2",
     "@parcel/transformer-sass": "^2.7.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "browser-sync": "^2.29.0",
+    "browser-sync": "^2.29.3",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "eleventy-plugin-broken-links": "^2.0.3",
